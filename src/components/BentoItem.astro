@@ -1,0 +1,25 @@
+---
+interface Props {
+  classOrigen?: string;
+  title: string;
+  subtitle?: string;
+  description:string
+}
+
+const { title, subtitle,description,classOrigen } = Astro.props;
+---
+
+<article
+  class={`
+  ${classOrigen}
+    col-span-5
+    relative rounded-xl
+    backdrop-blur-md
+    border border-black/10
+    shadow-inner shodow-while/10
+`}
+>
+  <h3>{title}</h3>
+  {subtitle && <span>{subtitle}</span>}
+  <p>{description}</p>
+</article>
